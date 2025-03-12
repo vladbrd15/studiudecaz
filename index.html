@@ -10,42 +10,240 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #f8f9fa;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8, #e0e7ff);
+            color: #2d3748;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Header Styles */
         .header {
-            background: linear-gradient(90deg, #007bff, #00d4ff);
+            background: linear-gradient(120deg, #6b48ff, #00ddeb);
             color: white;
-            padding: 3rem 0;
+            padding: 4rem 2rem;
             text-align: center;
-            border-radius: 0 0 20px 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 50% 50% / 0 0 100px 100px;
         }
 
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #00ddeb !important;
+        }
+
+        .nav-link {
+            color: white !important;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #00ddeb;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #00ddeb !important;
+        }
+
+        /* Content Container */
         .content {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
+            position: relative;
         }
 
+        h2 {
+            font-size: 2.5rem;
+            color: #4a00e0;
+            position: relative;
+            margin-bottom: 1.5rem;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: #8e2de2;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+        }
+
+        /* Card Styles */
         .card {
-            transition: transform 0.3s;
+            background: white;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
+        .card-title {
+            color: #4a00e0;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .card-title::after {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background: #00ddeb;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .card:hover .card-title::after {
+            width: 50px;
+        }
+
+        .card-text {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        /* List Styles */
+        .list-group-item {
+            background: transparent;
+            border: none;
+            padding: 1rem;
+            color: #333;
+            position: relative;
+            animation: fadeInUp 0.5s ease-out forwards;
+            animation-delay: calc(0.1s * var(--i));
+        }
+
+        .list-group-item::before {
+            content: counters(list-item, '.') '. ';
+            color: #8e2de2;
+            font-weight: bold;
+        }
+
+        /* Footer Styles */
         footer {
-            background-color: #343a40;
+            background: linear-gradient(90deg, #4a00e0, #8e2de2);
             color: white;
-            padding: 1rem 0;
+            padding: 2rem 0;
             text-align: center;
             position: relative;
-            bottom: 0;
-            width: 100%;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header {
+                padding: 2.5rem 1rem;
+                border-radius: 0 0 30% 30% / 0 0 60px 60px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 20px 10px;
+            }
+
+            .card {
+                margin-bottom: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -61,15 +259,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#importanta">Importanța Git și GitHub</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#creare-repository">Crearea unui Repository</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#resurse">Resurse utile</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link"
                             href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/creating-projects/creating-a-project"
@@ -94,7 +283,6 @@
             </div>
         </div>
     </nav>
-
 
     <div class="header">
         <h1 class="display-4 fw-bold">Importanța Git și GitHub</h1>
@@ -171,32 +359,25 @@
                 <p>Următorii pași detaliază procesul de creare a unui repository și hostarea unei pagini HTML folosind
                     GitHub Pages:</p>
                 <ol class="list-group list-group-numbered">
-                    <li class="list-group-item"><strong>Autentificare pe GitHub:</strong> Accesați <a
+                    <li class="list-group-item" style="--i: 1;"><strong>Autentificare pe GitHub:</strong> Accesați <a
                             href="https://github.com" target="_blank">github.com</a> și logați-vă cu contul dvs.</li>
-                    <li class="list-group-item"><strong>Crearea repository-ului:</strong> Apăsați pe „New” în secțiunea
-                        „Repositories”, dați un nume (ex. „git-github-demo”), setați-l ca public sau privat și bifați
-                        „Add a README file”. Apăsați „Create repository”.</li>
-                    <li class="list-group-item"><strong>Încărcarea fișierelor:</strong> Pe pagina repository-ului,
-                        folosiți „Add file” > „Upload files” pentru a încărca fișierul HTML (ex. „index.html”). Faceți
-                        commit cu un mesaj descriptiv.</li>
-                    <li class="list-group-item"><strong>Configurarea GitHub Pages:</strong> Mergi la „Settings” >
-                        „Pages” și selectați branch-ul dorit (de obicei „main”) și folderul „/root”. GitHub va crea un
-                        link public pentru pagina ta.</li>
+                    <li class="list-group-item" style="--i: 2;"><strong>Crearea repository-ului:</strong> Apăsați pe „New” în secțiunea
+                        „Repositories”, dați un nume (ex. „exemplu-repository”) și setați-l ca public.</li>
+                    <li class="list-group-item" style="--i: 3;"><strong>Împingerea fișierelor în repository:</strong> Folosiți Git pentru a
+                        trimite fișierele HTML și CSS în repository-ul creat.</li>
+                    <li class="list-group-item" style="--i: 4;"><strong>Activarea GitHub Pages:</strong> În secțiunea „Settings” a
+                        repository-ului, activați GitHub Pages pentru a face pagina accesibilă publicului.</li>
                 </ol>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2025 Git și GitHub - Toate drepturile rezervate</p>
+        <p>© 2025 Git și GitHub. Toate drepturile rezervate.</p>
     </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz4fnFO9gybK7v3dHpb7W3+6PbO+5Yvn1vs1B66p0p/4m1U5XyffTTi1p6"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-pzjw8f+ua7Kw1TIq0+W9/8dfwJraSHh39GRhrE4cTV5jp9bFjq79F8InXCKXjC5w1"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy2xBfG0pm69WFFh+XyS9iXsYYZX4tJvf6XKp5kz"
         crossorigin="anonymous"></script>
 </body>
 
