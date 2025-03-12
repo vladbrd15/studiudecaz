@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importanța Git și GitHub</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(90deg, #007bff, #00d4ff);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Git și GitHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#importanta">Importanța Git și GitHub</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#creare-repository">Crearea unui Repository</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resurse">Resurse utile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/creating-projects/creating-a-project"
+                            target="_blank">Crearea unui proiect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/creating-projects/migrating-from-projects-classic"
+                            target="_blank">Migrarea din Projects Classic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/creating-projects/copying-an-existing-project"
+                            target="_blank">Copierea unui proiect existent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects"
+                            target="_blank">Despre Proiecte</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="header">
+        <h1 class="display-4 fw-bold">Importanța Git și GitHub</h1>
+        <p class="lead">Colaborare eficientă pentru proiecte software</p>
+    </div>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="mt-4 mb-3">De ce sunt Git și GitHub esențiale?</h2>
+                <p>Git și GitHub sunt instrumente fundamentale pentru lucrul în echipă la proiecte software, indiferent
+                    de dimensiunea echipei sau complexitatea proiectului. Iată avantajele lor principale:</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Controlul versiunilor și istoricul modificărilor</h5>
+                        <p class="card-text">Git este un sistem distribuit de control al versiunilor care permite
+                            urmărirea tuturor modificărilor aduse codului sursă. Fiecare membru al echipei poate lucra
+                            independent, iar istoricul complet al modificărilor este păstrat, facilitând revenirea la o
+                            versiune anterioară dacă ceva nu funcționează corect.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Colaborare fără suprapuneri</h5>
+                        <p class="card-text">Prin utilizarea branch-urilor în Git, membrii echipei pot lucra simultan la
+                            diferite aspecte ale proiectului fără a interfera unul cu celălalt. GitHub extinde această
+                            funcționalitate prin pull request-uri, care permit revizuirea și integrarea codului doar
+                            după verificare.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Sincronizare între echipe distribuite</h5>
+                        <p class="card-text">GitHub acționează ca un repository centralizat (remote) unde codul este
+                            stocat și accesibil tuturor. Acest lucru este ideal pentru echipe care lucrează din locații
+                            diferite, asigurând acces la cea mai recentă versiune a proiectului.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Feedback și îmbunătățire continuă</h5>
+                        <p class="card-text">GitHub oferă instrumente precum Issues și Projects pentru gestionarea
+                            sarcinilor și urmărirea progresului, precum și posibilitatea de a primi feedback prin code
+                            reviews, ceea ce îmbunătățește calitatea codului.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Backup și accesibilitate</h5>
+                        <p class="card-text">Stocarea codului pe GitHub asigură o copie de rezervă în cloud, protejând
+                            proiectul împotriva pierderii datelor. De asemenea, permite accesul la proiect de pe orice
+                            dispozitiv conectat la internet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h2 class="mb-3">Cum se creează un repository pe GitHub?</h2>
+                <p>Următorii pași detaliază procesul de creare a unui repository și hostarea unei pagini HTML folosind
+                    GitHub Pages:</p>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item"><strong>Autentificare pe GitHub:</strong> Accesați <a
+                            href="https://github.com" target="_blank">github.com</a> și logați-vă cu contul dvs.</li>
+                    <li class="list-group-item"><strong>Crearea repository-ului:</strong> Apăsați pe „New” în secțiunea
+                        „Repositories”, dați un nume (ex. „git-github-demo”), setați-l ca public sau privat și bifați
+                        „Add a README file”. Apăsați „Create repository”.</li>
+                    <li class="list-group-item"><strong>Încărcarea fișierelor:</strong> Pe pagina repository-ului,
+                        folosiți „Add file” > „Upload files” pentru a încărca fișierul HTML (ex. „index.html”). Faceți
+                        commit cu un mesaj descriptiv.</li>
+                    <li class="list-group-item"><strong>Configurarea GitHub Pages:</strong> Mergi la „Settings” >
+                        „Pages” și selectați branch-ul dorit (de obicei „main”) și folderul „/root”. GitHub va crea un
+                        link public pentru pagina ta.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Git și GitHub - Toate drepturile rezervate</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz4fnFO9gybK7v3dHpb7W3+6PbO+5Yvn1vs1B66p0p/4m1U5XyffTTi1p6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-pzjw8f+ua7Kw1TIq0+W9/8dfwJraSHh39GRhrE4cTV5jp9bFjq79F8InXCKXjC5w1"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
